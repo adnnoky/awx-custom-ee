@@ -28,6 +28,7 @@ USER root
 COPY --from=galaxy /usr/share/ansible /usr/share/ansible
 
 COPY --from=builder /output/ /output/
+RUN yum update -y
 RUN /output/install-from-bindep && rm -rf /output/wheels
 RUN alternatives --set python /usr/bin/python3
 COPY --from=quay.io/project-receptor/receptor:latest /usr/bin/receptor /usr/bin/receptor
