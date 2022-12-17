@@ -1,0 +1,19 @@
+---
+version: 1.0
+
+build_arg_defaults:
+  EE_BASE_IMAGE: "registry.redhat.io/ansible-automation-platform-21/ee-29-rhel8"
+  ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: "-c"
+  #  EE_BASE_IMAGE: 'quay.io/repository/ansible/awx-ee'
+
+# ansible_config: 'ansible.cfg'
+
+dependencies:
+  galaxy: requirements.yml
+  #  python: requirements.txt
+  #  system: bindep.txt
+
+additional_build_steps:
+  prepend: |
+    RUN pip3 install --upgrade pip setuptools
+    #  append: |
