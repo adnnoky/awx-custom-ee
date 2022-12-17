@@ -6,3 +6,4 @@ jmespath
 netaddr
 yamlpath
 yq
+python-logstash

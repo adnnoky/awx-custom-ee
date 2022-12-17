@@ -2,4 +2,3 @@
 collections:
         #  - name: ansible.builtin
   - name: community.general
-  - name: containers.podman
