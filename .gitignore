@@ -1,2 +1,2 @@
-#key uzantılı dosyaların tamamı göz ardı edilsin 
+#ignore key files 
 *.key
