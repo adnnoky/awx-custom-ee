@@ -5,8 +5,6 @@ FROM $EE_BASE_IMAGE as galaxy
 ARG ANSIBLE_GALAXY_CLI_COLLECTION_OPTS=-c
 USER root
 
-ADD _build /build
-WORKDIR /build
 
 RUN ansible-galaxy role install -r requirements.yml --roles-path /usr/share/ansible/roles
 RUN ansible-galaxy collection install $ANSIBLE_GALAXY_CLI_COLLECTION_OPTS -r requirements.yml --collections-path /usr/share/ansible/collections
